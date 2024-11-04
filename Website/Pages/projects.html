@@ -1,28 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0">
   <title>Taheemmi</title>
-  <link rel="stylesheet" href = "../CSS/main.css">
+  <link rel="stylesheet" href = "Website/CSS/main.css">
 </head>
 <body>
   <header>
     <!-- Header content goes here -->
-    <h1>Taheem</h1>
+    <h1>Contents</h1>
     <nav>
       <!-- Navigation menu goes here -->
       <ul>
-        <li><a href="../Website/index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
-	<li><a href="contact.html">Contact me</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="Website/Pages/projects.html">Projects</a></li>
+        <li><a href="Website/Pages/experience.html">Experience</a></li>
+        <li><a href="Website/Pages/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <!-- Body content goes here -->
-    <h2>Project</h2>
-    <p> </p>
+    <div class="view-containter">
+        <h2>Projects</h2>
+        <button class="toggle-button" onclick="toggleView()">ToggleView</button>
+    <div>
+
+    <div id="view" class="grid-view">
+      <div class="item-container">
+        <!--Item 1-->
+        <div class="item-card">
+          <div class="item-image"></div>
+            <div class="item-info">
+              <div class="item-title">Lossless Compression</div>
+                <div class="item-description">Converts any file or folder to a zip file</div>
+              </div>
+            </div>
+            <!--Item 2-->
+            <div class="item-card">
+              <div class="item-image"></div>
+                <div class="item-info">
+                  <div class="item-title">Youtube Music to Spotify</div>
+                    <div class="item-description"> Transfers liked songs from youtube music to spotify</div>
+                  </div>
+                </div>
+            <!--Item 3-->
+            <div class="item-card">
+              <div class="item-image"></div>
+                <div class="item-info">
+                  <div class="item-title">CSV Reformatter</div>
+                    <div class="item-description"> Simple python script used to rearange formatting of an excel file</div>
+                  </div>
+                </div>
+            <!--Item 4-->
+            <div class="item-card">
+              <div class="item-image"></div>
+                <div class="item-info">
+                  <div class="item-title">ToDo in c#</div>
+                    <div class="item-description"> command based task manager</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              function toggleView() {
+                const view = document.getElementsById('view');
+                view.classList.toggle('grid-view');
+                view.classList.toggle('list-view');
+              }
+            </script>
   </main>
 
   <footer>
