@@ -25,7 +25,9 @@
     <!-- Body content goes here -->
     <div class="view-containter">
         <h2>Projects</h2>
+        <div id="view" class="item-container"></div>
     <div>
+  </main>
 
     <script>
       const items = [
@@ -35,7 +37,7 @@
         { id: 4, title: 'ToDo in c#', description: 'Command line based task manager', url:''}
       ];
 
-      const itemContainer = document.getElementsById('view');
+      const itemContainer = document.getElementById('view');
 
       function generateItems() {
         itemContainer.innerHTML = '';
@@ -55,7 +57,7 @@
       window.onload = generateItems;
     </script>
 
-  </main>
+
   <footer>
     <!-- Footer content goes here -->
     <p>&copy; 2024 Taheem Miah</p>
