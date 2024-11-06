@@ -25,55 +25,37 @@
     <!-- Body content goes here -->
     <div class="view-containter">
         <h2>Projects</h2>
-        <button class="toggle-button" onclick="toggleView()">ToggleView</button>
     <div>
 
-    <div id="view" class="grid-view">
-      <div class="item-container">
-        <!--Item 1-->
-        <div class="item-card">
-          <div class="item-image"></div>
+    <script>
+      const items = [
+        { id: 1, title: 'Lossless Compression', description: 'Converts any file or folder to a zip file', url: ''},
+        { id: 2, title: 'Youtube Music to Spotify', description: 'Transfers liked somgs from YouTube Music to Spotify', url: ''},
+        { id: 3, title: 'CSV Reformatter', description: 'Simple python script used to rearange formatting of an excel file', url: ''},
+        { id: 4, title: 'ToDo in c#', description: 'Command line based task manager', url:''}
+      ];
+
+      const itemContainer = document.getElementsById('view');
+
+      function generateItems() {
+        itemContainer.innerHTML = '';
+        items.forEach(item => {
+          const card = document.createElement('div');
+          card.classList.add('item-card');
+          card.innerHTML = `
             <div class="item-info">
-              <div class="item-title">Lossless Compression</div>
-                <div class="item-description">Converts any file or folder to a zip file</div>
-              </div>
-            </div>
-            <!--Item 2-->
-            <div class="item-card">
-              <div class="item-image"></div>
-                <div class="item-info">
-                  <div class="item-title">Youtube Music to Spotify</div>
-                    <div class="item-description"> Transfers liked songs from youtube music to spotify</div>
-                  </div>
-                </div>
-            <!--Item 3-->
-            <div class="item-card">
-              <div class="item-image"></div>
-                <div class="item-info">
-                  <div class="item-title">CSV Reformatter</div>
-                    <div class="item-description"> Simple python script used to rearange formatting of an excel file</div>
-                  </div>
-                </div>
-            <!--Item 4-->
-            <div class="item-card">
-              <div class="item-image"></div>
-                <div class="item-info">
-                  <div class="item-title">ToDo in c#</div>
-                    <div class="item-description"> command based task manager</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <a href="${item.url}" target="_blank" class="item-title">${item.title}</a>
+              <div class="item-description">${item.description}</div>
+            <div>
+          `;
+          itemContainer.appendChild(card);
+        });
+      }
 
-            <script>
-              function toggleView() {
-                const view = document.getElementsById('view');
-                view.classList.toggle('grid-view');
-                view.classList.toggle('list-view');
-              }
-            </script>
+      window.onload = generateItems;
+    </script>
+
   </main>
-
   <footer>
     <!-- Footer content goes here -->
     <p>&copy; 2024 Taheem Miah</p>
